@@ -1,0 +1,8 @@
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\bin\Debug\MyFormsApplication.exe.config
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\bin\Debug\MyFormsApplication.exe
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\bin\Debug\MyFormsApplication.pdb
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\obj\Debug\MyFormsApplication.Form1.resources
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\obj\Debug\MyFormsApplication.Properties.Resources.resources
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\obj\Debug\MyFormsApplication.csproj.GenerateResource.Cache
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\obj\Debug\MyFormsApplication.exe
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyFormsApplication\obj\Debug\MyFormsApplication.pdb

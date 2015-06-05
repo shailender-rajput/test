@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NYC_AssignmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Invoice_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartyId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Party_Master" Relationship="Self.FK__Invoice_M__Party__37A5467C" FromRole="Invoice_Master" ToRole="Party_Master" />
+    <NavigationProperty Name="Product_Master" Relationship="Self.FK__Invoice_M__Produ__38996AB5" FromRole="Invoice_Master" ToRole="Product_Master" />
+  </EntityType>
+  <EntityType Name="Party_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Invoice_Master" Relationship="Self.FK__Invoice_M__Party__37A5467C" FromRole="Party_Master" ToRole="Invoice_Master" />
+  </EntityType>
+  <EntityType Name="Product_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ManufacturedDate" Type="DateTime" Precision="0" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Invoice_Master" Relationship="Self.FK__Invoice_M__Produ__38996AB5" FromRole="Product_Master" ToRole="Invoice_Master" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__Invoice_M__Party__37A5467C">
+    <End Role="Party_Master" Type="Self.Party_Master" Multiplicity="1" />
+    <End Role="Invoice_Master" Type="Self.Invoice_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Party_Master">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice_Master">
+        <PropertyRef Name="PartyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice_M__Produ__38996AB5">
+    <End Role="Product_Master" Type="Self.Product_Master" Multiplicity="1" />
+    <End Role="Invoice_Master" Type="Self.Invoice_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Master">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice_Master">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NYC_AssignmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Invoice_Master" EntityType="Self.Invoice_Master" />
+    <EntitySet Name="Party_Master" EntityType="Self.Party_Master" />
+    <EntitySet Name="Product_Master" EntityType="Self.Product_Master" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__Invoice_M__Party__37A5467C" Association="Self.FK__Invoice_M__Party__37A5467C">
+      <End Role="Party_Master" EntitySet="Party_Master" />
+      <End Role="Invoice_Master" EntitySet="Invoice_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice_M__Produ__38996AB5" Association="Self.FK__Invoice_M__Produ__38996AB5">
+      <End Role="Product_Master" EntitySet="Product_Master" />
+      <End Role="Invoice_Master" EntitySet="Invoice_Master" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

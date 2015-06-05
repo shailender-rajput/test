@@ -1,0 +1,9 @@
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\bin\Debug\MyService.dll.config
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\bin\Debug\MyService.dll
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\bin\Debug\MyService.pdb
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\bin\Debug\EntityFramework.dll
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\bin\Debug\EntityFramework.xml
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\obj\Debug\MyService.dll
+C:\Users\shailender\documents\visual studio 2013\Projects\MyService\MyService\obj\Debug\MyService.pdb
